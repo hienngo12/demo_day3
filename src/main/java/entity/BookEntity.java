@@ -1,43 +1,34 @@
-package enity;
+package entity;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-
-import java.time. LocalDate;
-
-import org.springframework.format.annotation. DateTimeFormat;
-
+import java.time.LocalDate;
 @Entity
-@Table (name = "book")
+@Table(name = "book")
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-            @Column(name = "id")
-            private int id;
+    @Column(name = "id")
+    private int id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "author")
+    private String author;
+    @Column(name = "category")
+    private String category;
+    @Column(name = "isbn")
+    private String isbn;
+    @Column(name = "price")
+    private double price;
+    @Column(name = "numberPage")
+    private int numberOfPage;
+    @Column(name = "publishDate")
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
+    private LocalDate publishDate;
+    public BookEntity() {
 
-            @Column(name = "name")
-            private String name;
-
-            @Column(name = "author")
-            private String author;
-
-            @Column(name = "category")
-            private String category;
-
-            @Column(name = "isbn")
-            private String isbn;
-
-            @Column(name = "price")
-            private double price;
-
-            @Column(name = "numberPage")
-            private int numberPage;
-
-            @Column(name = "publishDate")
-           @DateTimeFormat(pattern = " yyyy-MM-dd")
-            private  LocalDate publishDate;
-
-            public  BookEntity(){
-            }
+    }
 
     public int getId() {
         return id;
@@ -87,12 +78,12 @@ public class BookEntity {
         this.price = price;
     }
 
-    public int getNumberPage() {
-        return numberPage;
+    public int getNumberOfPage() {
+        return numberOfPage;
     }
 
-    public void setNumberPage(int numberPage) {
-        this.numberPage = numberPage;
+    public void setNumberOfPage(int numberOfPage) {
+        this.numberOfPage = numberOfPage;
     }
 
     public LocalDate getPublishDate() {
@@ -112,10 +103,9 @@ public class BookEntity {
                 ", category='" + category + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", price=" + price +
-                ", numberPage=" + numberPage +
+                ", numberOfPage=" + numberOfPage +
                 ", publishDate=" + publishDate +
                 '}';
+
     }
-
-
 }
