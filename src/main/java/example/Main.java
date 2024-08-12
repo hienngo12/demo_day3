@@ -1,6 +1,6 @@
 package example;
 
-import config.SpringConfig;
+import config.SpringCustomerConfig;
 import entity.BookEntity;
 import repository.BookRepository;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Main {
-    static ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+    static ApplicationContext context = new AnnotationConfigApplicationContext(SpringCustomerConfig.class);
     static BookRepository bookRepository = (BookRepository) context.getBean("bookRepository");
 
     private static void createNewBook() {

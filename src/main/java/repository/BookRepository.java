@@ -1,13 +1,13 @@
-package repository;
+    package repository;
 
-import entity.BookEntity;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+    import entity.BookEntity;
+    import org.springframework.data.repository.CrudRepository;
+    import org.springframework.stereotype.Repository;
 
-@Repository
-public interface BookRepository extends CrudRepository<BookEntity, Integer> {
+    @Repository
+    public interface BookRepository extends CrudRepository<BookEntity, Integer> {
 
-    BookEntity findById(int bookID);
+        BookEntity findById(int bookID);
 
-    void deleteById(int id);
-}
+        void deleteById(int id);
+    }
