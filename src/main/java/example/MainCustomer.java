@@ -9,7 +9,7 @@ import repository.CustomerRepository;
 import java.time.LocalDate;
 import java.util.List;
 
-class MainCutomer {
+class MainCustomer {
     static ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
     static CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
 
